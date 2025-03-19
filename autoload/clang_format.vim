@@ -75,10 +75,9 @@ endfunction
 
 function! s:make_style_options() abort
     let extra_options = s:build_extra_options()
-    return printf("{BasedOnStyle: %s, IndentWidth: %d, UseTab: %s%s}",
+    return printf("{BasedOnStyle: %s, IndentWidth: %d%s}",
                         \ g:clang_format#code_style,
                         \ (exists('*shiftwidth') ? shiftwidth() : &l:shiftwidth),
-                        \ &l:expandtab==1 ? 'false' : 'true',
                         \ extra_options)
 endfunction
 
